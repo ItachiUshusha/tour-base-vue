@@ -1,30 +1,48 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <TbaseNav/>
+  <div class="main">
+    <TbaseGallery class="gallery" id="gallery"/>
+    <TbaseCalc id="calculation"/>
+    <TbaseMap class="map" id="homeMap"/>
+  </div>
 </template>
 
+<script>
+  import TbaseNav from '@/components/TbaseNav.vue'
+  import TbaseCalc from '@/components/TbaseCalc.vue';
+  import TbaseGallery from '@/components/TbaseGallery.vue';
+  import TbaseMap from '@/components/TbaseMap.vue';
+  export default {
+    components:{
+      TbaseNav,
+      TbaseCalc,
+      TbaseGallery,
+      TbaseMap
+    }
+  }
+
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+.main{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+  gap: 4vh;
 }
 
-nav {
-  padding: 30px;
+.gallery{
+  margin-top: 2vh;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+.map{
+  display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    align-items: center;
 
-nav a.router-link-exact-active {
-  color: #42b983;
 }
 </style>
