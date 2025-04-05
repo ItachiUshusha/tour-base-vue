@@ -64,6 +64,7 @@ export default {
     width: 50vw;
     max-width: 1000px;
     max-height: 800px;
+    min-width: 356.25px;
 }
 .open-in-yandex {
     display: block;
