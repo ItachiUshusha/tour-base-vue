@@ -18,16 +18,12 @@
 </template>
 
 <script>
-import { handleError } from 'vue';
-
 export default {
   data() {
     return {
       isMenuOpen: false,
       navElem: [
-        {name: 'about', title: "О нас", icon: '&hearts;' },
         {name: 'calculation', title: "Заказать комнату", icon: '&#128719;' },
-        {name: 'price', title: "Цены", icon: '&#128178;' },
         {name: 'homeMap', title: "Где нас найти", icon: '&#128205;' }
       ]
     }
@@ -65,7 +61,7 @@ export default {
 
 .nav-header {
   display: flex;
-  justify-content: space-between; /* Распределяет пространство между элементами */
+  justify-content: space-between;
   align-items: center;
   padding: 1vh 2vw;
   max-width: 1200px;
@@ -79,7 +75,7 @@ export default {
   color: #0b41b6;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
   white-space: nowrap;
-  margin-right: auto; /* Прижимает к левому краю */
+  margin-right: auto;
 }
 
 .nav-menu {
@@ -103,6 +99,11 @@ export default {
   white-space: nowrap;
 }
 
+.nav-elem:hover {
+  background-color: rgba(11, 65, 182, 0.3);
+  border: 1px solid rgb(11, 65, 182);
+  transform: scale(110%)
+}
 .burger-menu {
   display: none;
   flex-direction: column;
