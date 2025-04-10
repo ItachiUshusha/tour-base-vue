@@ -2,7 +2,7 @@
   <TbaseNav/>
   <div class="main">
     <TbaseGallery class="gallery" id="gallery"/>
-    <TbaseCalc id="calculation"/>
+    <TbaseCalc class="calc" id="calculation"/>
     <TbaseMap class="map" id="homeMap"/>
   </div>
 </template>
@@ -29,7 +29,7 @@
   flex-wrap: wrap;
   align-items: center;
   flex-direction: column;
-  gap: 4vh;
+  gap: 5vh;
 }
 
 .gallery{
@@ -37,12 +37,13 @@
 }
 
 .map{
-  display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-content: center;
-    flex-wrap: wrap;
-    align-items: center;
+    height: 60vh;
+    width: 95vw;
+    max-width: 1000px;
+    max-height: 800px;
+}
 
+.calc{
+  width:100%;
 }
 </style>

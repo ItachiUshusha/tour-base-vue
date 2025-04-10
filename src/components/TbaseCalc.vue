@@ -199,13 +199,14 @@
     flex-direction: column;
     gap: 10px;
 }
+
 .selectables{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     gap: 10px;
-    width: 100%;
 }
+
 .vue-recaptcha{
     display: none
 }
