@@ -1,66 +1,55 @@
 <template>
-    <div class="carousel">
-        <div 
-            class="carousel-content"
-            :style="{ transform: `translateX(-${currentIndex * 100}%)` }"
-            >
-            <div 
-                v-for="(img, index) in imgs" 
-                :key="index" 
-                class="carousel-item" 
-                >
-                <img :src="img" alt="">
-            </div>
-        </div>
-        <button class="carousel-control next" @click="nextSlide"></button>
-        <button class="carousel-control prev" @click="prevSlide"></button>
-        <div class="pagination">
-          <span
-            v-for="(img, index) in imgs"
-            :class="{'active': currentIndex === index}"
-            :key="index"
-            @click="goToSlide(index)">
-          </span>
-        </div>
+  <div class="carousel">
+    <div
+      class="carousel-content"
+      :style="{ transform: `translateX(-${currentIndex * 100}%)` }"
+    >
+      <div v-for="(img, index) in imgs" :key="index" class="carousel-item">
+        <img :src="img" alt="" />
+      </div>
     </div>
+    <button class="carousel-control next" @click="nextSlide"></button>
+    <button class="carousel-control prev" @click="prevSlide"></button>
+    <div class="pagination">
+      <span
+        v-for="(img, index) in imgs"
+        :class="{ active: currentIndex === index }"
+        :key="index"
+        @click="goToSlide(index)"
+      >
+      </span>
+    </div>
+  </div>
 </template>
 
 <script>
-    export default {
-        name: 'my-carousel',
-        data(){
-            return{
-                currentIndex: 0,
-                interval: null
-            }
-        },
-        props: {
-            imgs: {
-                type: Array,
-                default: () => []
-            }
-        },
-        methods: {
-            prevSlide() {
-                this.currentIndex = (this.currentIndex - 1 + this.imgs.length) % this.imgs.length;
-            },
-            nextSlide() {
-                this.currentIndex = (this.currentIndex + 1) % this.imgs.length;
-            },
-            goToSlide(index){
-              this.currentIndex = index;
-            },
-            startAutoPlay() {
-              this.interval = setInterval(this.nextSlide, 8000);
-            },
-            stopAutoPlay(){
-              clearInterval(this.interval)
-            }
-        },
-        mounted(){
-          this.startAutoPlay()
-        },
-}
+export default {
+  name: 'my-carousel',
+  data() {
+    return {
+      currentIndex: 0,
+      interval: null,
+    };
+  },
+  props: {
+    imgs: {
+      type: Array,
+      default: () => [],
+    },
+  },
+  methods: {
+    prevSlide() {
+      this.currentIndex =
+        (this.currentIndex - 1 + this.imgs.length) % this.imgs.length;
+    },
+    nextSlide() {
+      this.currentIndex = (this.currentIndex + 1) % this.imgs.length;
+    },
+    goToSlide(index) {
+      this.currentIndex = index;
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -73,7 +62,7 @@
   overflow: hidden;
 }
 
-.carousel-content{
+.carousel-content {
   display: flex;
   transition: transform 0.5s ease;
   height: 100%;
@@ -94,7 +83,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(250, 250, 250, .5);
+  background-color: rgba(250, 250, 250, 0.5);
   color: white;
   border: none;
   padding: 10px;
