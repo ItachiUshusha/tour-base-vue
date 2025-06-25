@@ -60,11 +60,14 @@ export default {
 
 <style scoped>
 .map-container {
-    height: 50vh;
-    width: 50vw;
-    max-width: 1000px;
-    max-height: 800px;
-    min-width: 356.25px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    width:100%;
+    height:100%;
 }
 .open-in-yandex {
     display: block;

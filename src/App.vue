@@ -28,7 +28,7 @@ export default {
   flex-wrap: wrap;
   align-items: center;
   flex-direction: column;
-  gap: 4vh;
+  gap: 5vh;
 }
 
 .gallery {
